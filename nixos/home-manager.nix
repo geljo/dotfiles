@@ -9,11 +9,11 @@ let
 in {
   imports = [ "${home-manager}/nixos" ];
 
-  home-manager.users.edward = {
+  home-manager.users.johann = {
     programs.git = {
       enable = true;
-      userName = "scompt";
-      userEmail = "scompt@scompt.com";
+      userName = "JohannGelhorn";
+      userEmail = "johanngelhorn@gmail.com";
     };
 
     home.packages = [
@@ -21,7 +21,7 @@ in {
       pkgs.chromium
       pkgs.enpass
       pkgs.firefox
-      pkgs.jetbrains.pycharm-professional
+      pkgs.jetbrains.idea-ultimate
       pkgs.slack
       pkgs.spotify
       pkgs.xfce4-12.thunar
@@ -69,13 +69,13 @@ in {
       };
     };
 
-    home.file.".config/i3blocks/config".source = ./i3blocks.config;
-    home.file.".config/i3blocks/battery.sh".source = ./battery.sh;
+    # home.file.".config/i3blocks/config".source = ./i3blocks.config;
+    # home.file.".config/i3blocks/battery.sh".source = ./battery.sh;
 
-    home.file.".gitconfig".source = ./git_config;
-    home.file.".gitignore_global".source = ./gitignore_global;
+    # home.file.".gitconfig".source = ./git_config;
+    # home.file.".gitignore_global".source = ./gitignore_global;
 
-    home.file.".ssh/config".source = ./ssh_config;
+    # home.file.".ssh/config".source = ./ssh_config;
 
     xsession.enable = true;
     xsession.windowManager.i3 = {
@@ -84,7 +84,7 @@ in {
         modifier = "Mod4";
         bars = [{
           fonts = [ "FontAwesome 10" "Terminus 10" ];
-          statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
+          # statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
         }];
       };
     };

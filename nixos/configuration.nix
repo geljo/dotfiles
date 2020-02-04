@@ -19,16 +19,16 @@
   nixpkgs.config.allowUnfree = true;
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
-  boot.initrd.luks.devices = [{
-    name = "root";
-    device = "/dev/nvme0n1p2";
-    preLVM = true;
-    allowDiscards = true;
-  }];
+  # boot.initrd.luks.devices = [{
+  #   name = "root";
+  #   device = "/dev/nvme0n1p2";
+  #   preLVM = true;
+  #   allowDiscards = true;
+  # }];
 
   powerManagement.enable = true;
   networking = {
-    hostName = "remora";
+    hostName = "jarvis";
     wireless.enable = true;
     useDHCP = true;
     enableIPv6 = false;
@@ -37,9 +37,9 @@
     #firewall.allowedUDPPorts = [ 17500 ];
   };
 
-  services.openvpn.servers = {
-    smartlaneVPN = { config = "config /etc/nixos/smartlaneVPN.conf "; };
-  };
+  # services.openvpn.servers = {
+  #   smartlaneVPN = { config = "config /etc/nixos/smartlaneVPN.conf "; };
+  # };
 
   services.fprintd = {
     enable = true;
@@ -68,11 +68,11 @@
 '';
   };
 
-  environment.shellInit = ''
-    export GPG_TTY="$(tty)"
-    gpg-connect-agent /bye
-    export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-  '';
+  # environment.shellInit = ''
+  #   export GPG_TTY="$(tty)"
+  #   gpg-connect-agent /bye
+  #   export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+  # '';
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -194,10 +194,10 @@
   hardware.bluetooth.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.edward = {
+  users.users.johann = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" ];
-    openssh.authorizedKeys.keyFiles = [ ./id_rsa.pub ];
+    extraGroups = [ "wheel" "docker" "networkmanager" "sound" "video" ];
+    # openssh.authorizedKeys.keyFiles = [ ./id_rsa.pub ];
     shell = "/run/current-system/sw/bin/zsh";
   };
 
