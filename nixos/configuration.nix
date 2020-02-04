@@ -8,7 +8,7 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./xserver.nix
-    # ./home-manager.nix
+    ./home-manager.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -19,12 +19,14 @@
   nixpkgs.config.allowUnfree = true;
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
-  # boot.initrd.luks.devices = [{
-  #   name = "root";
-  #   device = "/dev/nvme0n1p2";
-  #   preLVM = true;
-  #   allowDiscards = true;
-  # }];
+  boot.initrd.luks.devices = [{
+    name = "root";
+    device = "/dev/disk/by-uuid/11b21303-e8d7-4b57-87ae-c98e4386ffef";
+    preLVM = true;
+    allowDiscards = true;
+  }];
+
+
 
   powerManagement.enable = true;
   networking = {

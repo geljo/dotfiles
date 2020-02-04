@@ -17,9 +17,7 @@ in {
     };
 
     home.packages = [
-      pkgs.vscode
       pkgs.chromium
-      pkgs.enpass
       pkgs.firefox
       pkgs.jetbrains.idea-ultimate
       pkgs.slack
@@ -28,7 +26,6 @@ in {
       pkgs.vlc
       pkgs.i3blocks
       pkgs.i3lock-fancy
-      pkgs.i3-gaps
       pkgs.lazygit
       pkgs.scrot
       pkgs.lastpass-cli
@@ -39,11 +36,11 @@ in {
       pkgs.zoom-us
     ];
 
-    services.redshift = {
-      enable = true;
-      latitude = "48.1351";
-      longitude = "11.5820";
-    };
+#    services.redshift = {
+#      enable = true;
+#      latitude = "48.1351";
+#      longitude = "11.5820";
+#    };
     services.screen-locker = {
       enable = true;
       lockCmd = "${pkgs.i3lock-fancy}/bin/i3lock-fancy -n";
@@ -61,7 +58,7 @@ in {
       enable = true;
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "git-extras" "gpg-agent" "docker" ];
+        plugins = [ "git" "git-extras" "ssh-agent" "gpg-agent" "docker" ];
         theme = "robbyrussell";
       };
       sessionVariables = { EDITOR = "vim"; };
@@ -86,7 +83,7 @@ in {
         modifier = "Mod4";
         bars = [{
           fonts = [ "FontAwesome 10" "Terminus 10" ];
-          # statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
+          statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
         }];
       };
     };
