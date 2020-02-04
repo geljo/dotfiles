@@ -29,6 +29,7 @@ in {
       pkgs.i3blocks
       pkgs.i3lock-fancy
       pkgs.i3-gaps
+      pkgs.lazygit
       pkgs.scrot
       pkgs.lastpass-cli
       pkgs.keybase
