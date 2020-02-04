@@ -28,6 +28,7 @@ in {
       pkgs.vlc
       pkgs.i3blocks
       pkgs.i3lock-fancy
+      pkgs.i3-gaps
       pkgs.scrot
       pkgs.lastpass-cli
       pkgs.keybase
