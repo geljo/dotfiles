@@ -76,7 +76,7 @@
   #   export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
   # '';
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
 
   systemd.user.services.dropbox = {
     description = "Dropbox";
