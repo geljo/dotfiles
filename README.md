@@ -1,3 +1,3 @@
 # dotfiles
 
-personal configs for xserver and tools
+personal configs for 

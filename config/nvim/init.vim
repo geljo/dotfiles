@@ -13,10 +13,11 @@ Plug 'easymotion/vim-easymotion'
 " ================================
 " GIT
 " ================================
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'mbbill/undotree'
 Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
+Plug 'idanarye/vim-merginal'
 
 
 " ================================
@@ -41,9 +42,9 @@ Plug 'w0rp/ale'
 Plug 'wakatime/vim-wakatime'
 Plug 'https://github.com/alok/notational-fzf-vim'
 Plug 'vimwiki/vimwiki'
-Plug 'honza/vim-snippets'
+Plug 'https://github.com/JohannGelhorn/vim-snippets.git'
 Plug 'SirVer/ultisnips'
-
+Plug 'zenbro/mirror.vim'
 " Initialize plugin system
 call plug#end()
 
@@ -82,7 +83,11 @@ set hidden
 
 
 let mapleader = "\<Space>"
-colorscheme gruvbox
+" let mapleader = ","
+" load theme
+" colorscheme gruvbox
+colorscheme onedark
+
 set background=dark
 
 "" Copy/Paste/Cut
@@ -250,7 +255,10 @@ nnoremap <leader>u :UndotreeShow<CRq
 
 " GIT
 " setup mapping to call :LazyGit
-nnoremap <silent> <leader>gg :LazyGit<CR>
+" nnoremap <silent> <leader>gg :LazyGit<CR>
+nnoremap <silent> <leader>gg :Gstatus<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gd :Gdiffsplit<CR>
 
 " Terminal 
 nnoremap <leader>sh :terminal<CR>
