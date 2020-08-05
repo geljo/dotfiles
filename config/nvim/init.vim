@@ -38,6 +38,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
+Plug 'wakatime/vim-wakatime'
 Plug 'https://github.com/alok/notational-fzf-vim'
 Plug 'vimwiki/vimwiki'
 Plug 'honza/vim-snippets'
