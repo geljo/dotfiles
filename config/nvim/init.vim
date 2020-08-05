@@ -84,6 +84,7 @@ set hidden
 
 let mapleader = "\<Space>"
 " let mapleader = ","
+"
 " load theme
 " colorscheme gruvbox
 colorscheme onedark
@@ -257,11 +258,14 @@ nnoremap <leader>u :UndotreeShow<CRq
 " setup mapping to call :LazyGit
 " nnoremap <silent> <leader>gg :LazyGit<CR>
 nnoremap <silent> <leader>gg :Gstatus<CR>
+nnoremap <silent> <leader>ga :Git add %<CR>
+nnoremap <leader>gsh :Git push 
 nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gd :Gdiffsplit<CR>
+nnoremap <silent> <leader>dp :diffput<CR>
 
 " Terminal 
 nnoremap <leader>sh :terminal<CR>
-
+imapclear 
 " make escape key work in Terminal
 " tnoremap <Esc> <C-\><C-n><CR>
