@@ -1,4 +1,3 @@
-local configs = { dotfiles = '~/GIT/private/dotfiles'}
 
 --- helper function to create bindings
 local function map(mode, lhs, rhs, opts)
@@ -42,7 +41,10 @@ map('n', '<leader>/', "<cmd>lua require('telescope.builtin').current_buffer_fuzz
 map('n', '<leader>gb', "<cmd>lua require('telescope.builtin').git_branches()<cr>")
 map('n', '<leader>gc', "<cmd>lua require('telescope.builtin').git_commits()<cr>")
 map('n', '<leader>tl', "<cmd>lua require('telescope.builtin').treesitter()<cr>")
-map('n', '<leader>ec', "<cmd>lua require('telescope.builtin').find_files({ search_dirs = configs })<cr>")
+map('n', '<leader>ec', "<cmd>lua require('telescope.builtin').find_files({ search_dirs = { '~/GIT/private/dotfiles/'}, prompt_title = '~ dotfiles ~'})<cr>")
+-- map('n', '<leader>ec', "<cmd>lua require('johann.telescope_custom').search_notes()<cr>")
+map('n', '<leader>nd', "<cmd>lua require('telescope.builtin').live_grep({ search_dirs = { '~/GIT/private/org/'}, prompt_title = '~ Notes ~'})<cr>")
+-- map('n', '<leader>nd', "<cmd>lua require('johann.telescope_custom').grep_notes()<cr>")
 
 
 -- lsp

@@ -10,10 +10,13 @@ local function opt(scope, key, value)
   if scope ~= 'o' then scopes['o'][key] = value end
 end
 
-
+local cmd = vim.cmd
 local indent = 2
 
-vim.cmd 'colorscheme palenight'
+cmd 'colorscheme palenight'
+cmd "set clipboard=unnamed,unnamedplus"
+cmd "set undodir=~/.config/nvim/undodir"
+cmd "highlight LineNr ctermbg=none ctermfg=lightblue"
 
 opt('b', 'expandtab', true)
 opt('b', 'shiftwidth', indent)

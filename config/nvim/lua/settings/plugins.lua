@@ -16,9 +16,8 @@ paq {'nvim-telescope/telescope.nvim'}
 paq {'nvim-telescope/telescope-fzy-native.nvim'}
 paq {'nvim-lua/popup.nvim'}
 paq {'nvim-lua/plenary.nvim'}
-paq {'neovim/nvim-lsp'}
 paq {'neovim/nvim-lspconfig'}
--- paq {'neoclide/coc.nvim', branch='release'}
+paq {'neoclide/coc.nvim', branch='release'}
 
 
 -- some beautification
