@@ -1,3 +1,5 @@
+local configs = { dotfiles = '~/GIT/private/dotfiles'}
+
 --- helper function to create bindings
 local function map(mode, lhs, rhs, opts)
   local options = {noremap = true}
@@ -27,7 +29,7 @@ map('v', '<C-x>', "<cmd>:!pbcopy<cr>")
 map('v', '<C-c>', "<cmd>:w !pbcopy<cr><cr>")
 
 -- git
-
+map('n', '<leader>gg', '<cmd>Git <cr>')
 map('n', '<leader>gl', "<cmd>Git log<cr>")
 
 -- telescope
@@ -40,6 +42,7 @@ map('n', '<leader>/', "<cmd>lua require('telescope.builtin').current_buffer_fuzz
 map('n', '<leader>gb', "<cmd>lua require('telescope.builtin').git_branches()<cr>")
 map('n', '<leader>gc', "<cmd>lua require('telescope.builtin').git_commits()<cr>")
 map('n', '<leader>tl', "<cmd>lua require('telescope.builtin').treesitter()<cr>")
+map('n', '<leader>ec', "<cmd>lua require('telescope.builtin').find_files({ search_dirs = configs })<cr>")
 
 
 -- lsp
@@ -50,3 +53,8 @@ map('n', '<space>gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 map('n', '<space>K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 map('n', '<space>gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 -- map('n', '<space>s', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
+
+-- terminal
+map('n', '<space>sh', '<cmd>term<cr>')
+map('t', '<esc>', '<C-\\><C-n>')
+
