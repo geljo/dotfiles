@@ -1,0 +1,26 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "terraform",
+        "yaml",
+        "json",
+        "python"
+    ],
+    "languageserver": {
+        "terraform": {
+            "command": "terraform-ls",
+            "args": [
+                "serve"
+            ],
+            "trace.server": "verbose",
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {},
+            "settings": {
+                "editor.formatOnSave": true
+            }
+        }
+    },
+    "clangd.path": "/Users/jgelhorn/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
+}
