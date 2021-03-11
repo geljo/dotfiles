@@ -38,7 +38,8 @@ nnoremap <leader>0 :tablast<cr>
 
 " Files
 " nnoremap <leader>ff :Files<CR>
-nnoremap <leader>ff :Telescope find_files find_command=rg,--hidden,--files <cr>
+" nnoremap <leader>ff :Telescope find_files find_command=rg,--hidden,--files <cr>
+nnoremap <leader>ff :lua require("telescope.builtin").find_files({ hidden = true})<cr>
 nnoremap <leader>ec :lua require('johann.telescope').search_dotfiles()<cr>
 nnoremap <leader>nd :lua require("johann.telescope").search_notes()<cr>
 nnoremap <leader>of :Telescope file_browser<cr>
