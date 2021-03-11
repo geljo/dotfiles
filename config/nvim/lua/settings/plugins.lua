@@ -18,7 +18,7 @@ paq {'nvim-lua/popup.nvim'}
 paq {'nvim-lua/plenary.nvim'}
 paq {'neovim/nvim-lspconfig'}
 paq {'neoclide/coc.nvim', branch='release'}
-
+paq {'nvim-telescope/telescope-project.nvim'}
 
 -- some beautification
 paq {'rafi/awesome-vim-colorschemes'}

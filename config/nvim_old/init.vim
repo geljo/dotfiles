@@ -52,6 +52,8 @@ Plug 'nvim-treesitter/playground'
 
 call plug#end()
 
+lua require("johann.telescope")
+
 " colorscheme gruvbox
 " colorscheme one
 " colorscheme onedark

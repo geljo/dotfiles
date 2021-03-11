@@ -10,6 +10,7 @@ nnoremap <leader>wk :wincmd k<CR>
 nnoremap <leader>wl :wincmd l<CR>
 
 nnoremap <leader>wd :q<CR>
+nnoremap <leader>wo <C-w>o
 
 nnoremap <leader>ws :split<CR>
 nnoremap <leader>wv :vsplit<CR>
@@ -37,7 +38,9 @@ nnoremap <leader>0 :tablast<cr>
 
 " Files
 " nnoremap <leader>ff :Files<CR>
-nnoremap <leader>ff :Telescope find_files theme=get_dropdown find_command=rg,--hidden,--files <cr>
+nnoremap <leader>ff :Telescope find_files find_command=rg,--hidden,--files <cr>
+nnoremap <leader>ec :lua require('johann.telescope').search_dotfiles()<cr>
+nnoremap <leader>nd :lua require("johann.telescope").search_notes()<cr>
 nnoremap <leader>of :Telescope file_browser<cr>
 
 nnoremap <leader>ft :Vexplore<CR>
@@ -115,5 +118,3 @@ nnoremap <leader>gs :diffput //0<CR>
 nnoremap <leader>sh :term<CR>
 tnoremap <Esc> <C-\><C-n>
 
-" Notes
-nnoremap <leader>nd :NV<CR>

@@ -23,6 +23,9 @@ map('n', '<leader>wl', '<C-w>l')
 --  buffers
 map('n', '<leader>bd', '<cmd>bd<CR>')
 
+--
+map('n', '<leader>ut', "<cmd>UndotreeToggle<cr>" )
+
 -- copy pasting for mac
 map('v', '<C-x>', "<cmd>:!pbcopy<cr>")
 map('v', '<C-c>', "<cmd>:w !pbcopy<cr><cr>")
@@ -60,3 +63,10 @@ map('n', '<space>gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 map('n', '<space>sh', '<cmd>term<cr>')
 map('t', '<esc>', '<C-\\><C-n>')
 
+-- project management with vim
+vim.api.nvim_set_keymap(
+	'n',
+	'<leader>pp',
+	":lua require'telescope'.extensions.project.project{}<CR>",
+	{noremap = true, silent = true}
+)

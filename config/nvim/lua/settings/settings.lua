@@ -13,10 +13,10 @@ end
 local cmd = vim.cmd
 local indent = 2
 
+cmd('syntax on')
 cmd 'colorscheme palenight'
 cmd "set clipboard=unnamed,unnamedplus"
 cmd "set undodir=~/.config/nvim/undodir"
-cmd "highlight LineNr ctermbg=none ctermfg=lightblue"
 
 opt('b', 'expandtab', true)
 opt('b', 'shiftwidth', indent)
@@ -35,3 +35,5 @@ opt('w', 'number', true)
 opt('w', 'relativenumber', true)
 opt('w', 'wrap', false)
 
+cmd("highlight LineNr ctermfg=lightblue ctermbg=none")
+cmd("highlight Normal ctermbg=none")
