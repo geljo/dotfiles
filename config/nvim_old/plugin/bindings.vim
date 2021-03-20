@@ -51,6 +51,12 @@ nnoremap <leader>o- :Explore<CR>
 nnoremap <silent> <leader>y% :let @+=expand("%:p")<CR>
 
 
+" quickfixlists
+nnoremap <leader>qj :cnext<cr>
+nnoremap <leader>qk :cprevious<cr>
+
+" replace word under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 "  Grep *
 " nnoremap <leader>* :Rg <CR>
@@ -88,7 +94,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<tab>'
 
 
 " " Undotree
@@ -102,7 +107,9 @@ nnoremap <silent> <leader>ga :Git add %<CR>
 nnoremap <leader>gb :Telescope git_branches theme=get_dropdown<CR>
 nnoremap <leader>g<space> :Git 
 
-nnoremap <silent> <leader>gl :Telescope git_commits theme=get_dropdown<CR>
+
+nnoremap <leader>gl :Gclog<cr>
+" nnoremap <silent> <leader>gl :Telescope git_commits theme=get_dropdown<CR>
 
 " make diffs a bit easier
 " For 3-way merges
